@@ -1,0 +1,51 @@
+PODS:
+  - AlicloudPush (1.9.9.5):
+    - AlicloudSender
+    - AlicloudUT
+    - AlicloudUtils
+  - AlicloudSender (1.0.0.3):
+    - AlicloudUTDID
+    - EMASRest
+  - AlicloudUT (5.2.0.16):
+    - AlicloudUTDID
+  - AlicloudUTDID (1.5.0.94)
+  - AlicloudUtils (1.3.9):
+    - AlicloudUTDID
+  - aliyun_push (0.0.1):
+    - AlicloudPush (~> 1.9.9)
+    - Flutter
+  - EMASRest (11.1.1.2)
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - aliyun_push (from `.symlinks/plugins/aliyun_push/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - AlicloudPush
+    - AlicloudSender
+    - AlicloudUT
+    - AlicloudUTDID
+    - AlicloudUtils
+    - EMASRest
+
+EXTERNAL SOURCES:
+  aliyun_push:
+    :path: ".symlinks/plugins/aliyun_push/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  AlicloudPush: fde9d3a7f4ed4bb9d5a6047293ac520e990a667b
+  AlicloudSender: 1f468b6bd962a099ffc19d45e3608b0fe98f259d
+  AlicloudUT: 6d1cf30d57d096b7e9bb4b069dd0ba6ad59a3338
+  AlicloudUTDID: 7323c443dcdf9a73e2224dc6ce51703671d7a765
+  AlicloudUtils: 66e0ba6ece62d7dd05e9dd95674b2c7811624c2f
+  aliyun_push: 273d84faec05fbb44b792f7c37715841042e8100
+  EMASRest: 5ccda23f59b05cdd3a6e321c17e37e8125d7eea4
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: bac68c85cfeea183b5d902c01a726ed069e97b9b
+
+COCOAPODS: 1.10.1
