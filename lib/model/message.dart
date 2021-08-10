@@ -1,24 +1,24 @@
 class Message {
   final String body;
-  final int badge;
+  final int? badge;
   final String title;
-  final bool silent;
+  final bool? silent;
 
-  Message(
-    this.body,
-    this.badge,
-    this.title,
-    this.silent,
-  );
+  Message({
+    required this.body,
+    this.badge = 0,
+    required this.title,
+    this.silent = false,
+  });
 
   factory Message.fromJson(Map<String, dynamic> json) => Message(
-        json['body'],
-        intValue(json['badge']),
-        json['title'],
-        boolValue(json['silent']),
+        body: json['body']!,
+        badge: intValue(json['badge']),
+        title: json['title'],
+        silent: boolValue(json['silent']),
       );
 
-  static bool boolValue(dynamic json) {
+  static bool? boolValue(dynamic json) {
     if (json is bool) {
       return json;
     }
@@ -31,7 +31,7 @@ class Message {
     return null;
   }
 
-  static int intValue(dynamic json) {
+  static int? intValue(dynamic json) {
     if (json is int) {
       return json;
     }

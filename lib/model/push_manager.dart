@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:aliyun_push/model/message.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PushManager {
@@ -25,7 +24,7 @@ class PushManager {
     });
   }
 
-  static PushManager _instance;
+  static PushManager? _instance;
   static PushManager get instance => _instance ??= PushManager._();
 
   static const MethodChannel _channel = const MethodChannel('aliyun_push');
@@ -37,8 +36,8 @@ class PushManager {
   Stream<CCPSysMessage> get ccpMessageStream => _ccpController.stream;
 
   Future<void> init({
-    @required String appKey,
-    @required String appSecret,
+    required String appKey,
+    required String appSecret,
   }) async {
     return _channel.invokeMethod('init', <String, String>{
       'appKey': appKey,
@@ -47,11 +46,11 @@ class PushManager {
   }
 
   Future<void> bindTag({
-    @required List<String> tags,
+    required List<String> tags,
     int type = 1,
-    String alias,
+    String? alias,
   }) async {
-    assert(tags?.isNotEmpty ?? false);
+    assert(tags.isNotEmpty);
     return _channel.invokeMethod('bindTag', <String, dynamic>{
       'type': type,
       'tags': tags,
@@ -60,11 +59,11 @@ class PushManager {
   }
 
   Future<void> unbindTag({
-    @required List<String> tags,
+    required List<String> tags,
     int type = 1,
-    String alias,
+    String? alias,
   }) async {
-    assert(tags?.isNotEmpty ?? false);
+    assert(tags.isNotEmpty);
     return _channel.invokeMethod('unbindTag', <String, dynamic>{
       'type': type,
       'tags': tags,
